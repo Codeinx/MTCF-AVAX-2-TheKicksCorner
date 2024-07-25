@@ -26,7 +26,7 @@ const App = () => {
     setShowBuy(false);
   };
 
-  const contractAddress = "0x6cd7ef76d8046831ef29fac171badb32fea6cd56";
+  const contractAddress = "0xb436e5b1a2b013bbe4e40dbacebd2a92b0769dcb";
 
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
