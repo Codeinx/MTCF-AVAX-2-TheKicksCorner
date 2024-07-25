@@ -38,10 +38,10 @@ const App = () => {
 
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
-      const myGameStoreContract = new ethers.Contract(contractAddress, contractABI, signer);
+      const kicksContract = new ethers.Contract(contractAddress, contractABI, signer);
 
       try { 
-        const transaction = await myGameStoreContract.addProduct(itemPrice, itemName);
+        const transaction = await kicksContract.addProduct(itemPrice, itemName);
         await transaction.wait();
         toast.success("Product added successfully!", {
           position: "top-center",
@@ -64,10 +64,10 @@ const App = () => {
 
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
-      const myGameStoreContract = new ethers.Contract(contractAddress, contractABI, signer);
+      const kicksContract = new ethers.Contract(contractAddress, contractABI, signer);
 
       try { 
-        const transaction = await myGameStoreContract.buyProduct(itemId, amount);
+        const transaction = await kicksContract.buyProduct(itemId, amount);
         await transaction.wait();
         toast.success("Product bought successfully!", {
           position: "top-center",
@@ -90,14 +90,14 @@ const App = () => {
 
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
-      const myGameStoreContract = new ethers.Contract(contractAddress, contractABI, signer);
+      const kicksContract = new ethers.Contract(contractAddress, contractABI, signer);
 
       try { 
-        const transaction = await myGameStoreContract.getAllProducts();
+        const transaction = await kicksContract.getAllProducts();
         console.log(transaction)
         setRetrieved(transaction)
 
-        toast.success("Product bought successfully!", {
+        toast.success("All Shoes Displayed!", {
           position: "top-center",
         });
 
@@ -111,9 +111,9 @@ const App = () => {
 
 
   return (
-    <div style={{ backgroundImage: 'url("https://wallpapercave.com/wp/wp2631964.jpg' }} className="bg-[#1a1a1a] bg-cover bg-center min-h-[100vh] w-[100%] bg-blend-overlay flex justify-center items-center text-white max-w-[1440px] mx-auto">
+    <div style={{ backgroundImage: 'url("https://wallpapercave.com/wp/wp2631964.jpg' }} className="bg-[#1a1000] bg-cover bg-center min-h-[100vh] w-[100%] bg-blend-overlay flex justify-center items-center text-white max-w-[1440px] mx-auto">
       <div className="lg:w-[50%] md:w-[50%] w-[90%] mx-auto">
-        <h1 className="font-bold lg:text-[4rem] md:text-[4rem] text-[2rem] mt-2 text-center">Welcome to <span className="text-[#FFC0CB] drop-shadow-md">TheKicksCorner</span></h1>
+        <h1 className="font-bold lg:text-[4rem] md:text-[4rem] text-[2rem] mt-2 text-center">This is <span className="text-[#FFC0CB] drop-shadow-md">TheKicksCorner</span></h1>
         <p className="text-center lg:text-[2rem] md:text-[1.2rem] text-[.9rem] mb-8 text-center">Your No.1 Sneakers Plug</p>
         <section className="flex flex-col lg:flex-row md:flex-row lg:w-[70%] mx-auto justify-between md:w-[60%] w-[100%] flex-wrap">
           <div className="md:w-[45%] lg:w-[31%] w-[90%] mx-auto">
@@ -131,8 +131,9 @@ const App = () => {
                 <div className="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-black">
                   <h2 className="font-bold lg:text-[1.8rem] md:text-[1.8rem] text-[1.4rem] mt-2 text-[#FFC0CB]">Add Shoes</h2>
                   <p className="mb-4 text-xxs text-[#FFC0CB]">Only  the Admin can add products</p>
-                 <input type="text" placeholder="Price of item" className="py-2 px-4 border border-gray-200 rounded-lg w-[100%]  mb-4" onChange={(e) => setItemPrice(e.target.value)} />
-                 <input type="text" placeholder="Name of Item" className="py-2 px-4 border border-gray-200 rounded-lg w-[100%]  mb-4" onChange={(e) => setItemName(e.target.value)} />
+                 <input type="text" placeholder="ProductID " className="py-2 px-4 border border-gray-200 rounded-lg w-[100%]  mb-4" onChange={(e) => setItemId(e.target.value)} />
+                 <input type="text" placeholder="Name of Shoe" className="py-2 px-4 border border-gray-200 rounded-lg w-[100%]  mb-4" onChange={(e) => setItemName(e.target.value)} />
+                 <input type="text" placeholder="Price of Shoe" className="py-2 px-4 border border-gray-200 rounded-lg w-[100%]  mb-4" onChange={(e) => setItemPrice(e.target.value)} />
                 </div>
                 <div className="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
                   <button
