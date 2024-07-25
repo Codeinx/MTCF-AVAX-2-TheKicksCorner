@@ -19,7 +19,7 @@ contract TheKicksCorner {
     event ProductBought(uint id, address buyer);
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner can add products");
+        require(msg.sender == owner, "Only Admin can add Shoes");
         _;
     }
 
@@ -35,7 +35,7 @@ contract TheKicksCorner {
 
     function buyProduct(uint _id, uint _amount) external payable {
         Product storage product = products[_id];
-        require(product.id != 0, "Product does not exist");
+        require(product.id != 0, "Shoe does not exist");
         require(_amount >= product.amount, "Insufficient funds");
 
         buyers[_id] = msg.sender;
