@@ -111,7 +111,7 @@ const App = () => {
 
 
   return (
-    <div style={{ backgroundImage: 'url("https://wallpapercave.com/wp/wp2631964.jpg' }} className="bg-[#1a1000] bg-cover bg-center min-h-[100vh] w-[100%] bg-blend-overlay flex justify-center items-center text-white max-w-[1440px] mx-auto">
+    <div style={{ backgroundImage: 'url("https://wallpapercave.com/wp/wp2631964.jpg' }} className="bg-[#1a1000] bg-cover bg-center min-h-[100vh] w-[100%] bg-blend-overlay flex justify-center items-center text-white mx-auto">
       <div className="lg:w-[50%] md:w-[50%] w-[90%] mx-auto">
         <h1 className="font-bold lg:text-[4rem] md:text-[4rem] text-[2rem] mt-2 text-center">This is <span className="text-[#FFC0CB] drop-shadow-md">TheKicksCorner</span></h1>
         <p className="text-center lg:text-[2rem] md:text-[1.2rem] text-[.9rem] mb-8 text-center">Your No.1 Sneakers Plug</p>
