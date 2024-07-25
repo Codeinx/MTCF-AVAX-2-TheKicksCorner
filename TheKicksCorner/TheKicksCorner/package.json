@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "npm run generate-html && vite build",
+    "generate-html": "mkdir -p dist && cp index.html dist/"
   },
   "dependencies": {
     "@material-tailwind/html": "^2.2.2",
@@ -30,4 +32,5 @@
     "tailwindcss": "^3.4.4",
     "vite": "^5.2.0"
   }
+
 }
